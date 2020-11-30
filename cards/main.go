@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	// var card string = "Ace of spades"
 	// card := "Ace of Spades"
@@ -25,7 +23,10 @@ func main() {
 	// call the function from deck.go
 	cards.print()
 
-	fmt.Println(cards)
+	// fmt.Println(cards)
+	hand, remainingDeck := deal(cards, 2)
+	hand.print()
+	remainingDeck.print()
 }
 func newCard() string {
 	return "Five of Diamonds"

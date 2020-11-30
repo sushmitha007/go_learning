@@ -14,3 +14,8 @@ func (d deck) print() {
 		fmt.Println(i, card)
 	}
 }
+
+// Returning multiple values and using range inside slice
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
