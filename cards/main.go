@@ -36,11 +36,20 @@ func main() {
 
 	// converting deck into strings
 
-	cards := newDeck()
+	// cards := newDeck()
 	// fmt.Println(cards.toString())
 
 	// save cards to hardrive
-	cards.saveToFile("myCards")
+	// cards.saveToFile("myCards")
+
+	// Load the cards from drive
+	// cards := newDeckFromFile("myCards")
+	// cards.print()
+
+	// load the wrong file
+	cards := newDeckFromFile("my")
+	cards.print()
+
 }
 
 // func newCard() string {
