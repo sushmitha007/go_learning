@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // Create new type of deck, whcih is slice of strings
@@ -66,4 +68,19 @@ func newDeckFromFile(filename string) deck {
 	}
 	s := strings.Split(string(bs), ",")
 	return deck(s)
+}
+
+// this function is for shuffling the slice
+func (d deck) shuffle() {
+	//this is something like generating the seed which unique everytime
+	source := rand.NewSource(time.Now().UnixNano())
+	r := rand.New(source)
+	//generating random number. this is pseudo random generator
+	// newPosition := rand.Intn(len(d) - 1)
+	for i := range d {
+
+		newPosition := r.Intn(len(d) - 1)
+
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}
 }

@@ -47,9 +47,13 @@ func main() {
 	// cards.print()
 
 	// load the wrong file
-	cards := newDeckFromFile("my")
-	cards.print()
+	// cards := newDeckFromFile("my")
+	// cards.print()
 
+	//shuffle the deck
+	cards := newDeck()
+	cards.shuffle()
+	cards.print()
 }
 
 // func newCard() string {
