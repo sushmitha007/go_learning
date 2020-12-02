@@ -39,12 +39,12 @@ func (d deck) toString() string {
 func newDeck() deck {
 	cards := deck{}
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
-	cardValues := []string{"Ace", "Two", "Three"}
+	cardValues := []string{"Ace", "Two", "Three", "Four"}
 
 	// replace the variable with underscore when the varibles are not used anywhere in the code
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
-			cards = append(cards, suit+" of "+value)
+			cards = append(cards, value+" of "+suit)
 		}
 
 	}
