@@ -34,11 +34,19 @@ func main() {
 		},
 	}
 	// fmt.Printf("%+v", jim)
-	jim.updateName("jimmy")
+	//Creating the pointer to modify the original content
+	// jimPointer := &jim
+	// jimPointer.updateName("jimmy")
+
+	// Alternative way of declaring and defining pointer.go will automatically turn into pointer
+	jim.updateName("Jimmy")
+	// prints the values in struct
+	// fmt.Println(*&jim)
 	jim.print()
 }
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
 func (p person) print() {
 	fmt.Printf("%+v", p)
