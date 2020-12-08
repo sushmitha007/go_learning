@@ -4,6 +4,9 @@ import "fmt"
 
 type englishBot struct{}
 type spanishBot struct{}
+type bot interface {
+	getGreeting() string
+}
 
 func main() {
 	eb := englishBot{}
@@ -11,12 +14,21 @@ func main() {
 	printGreeting(eb)
 	printGreeting(sb)
 }
-func printGreeting(eb englishBot) {
-	fmt.Println(eb)
+
+// Problem without interface
+
+// func printGreeting(eb englishBot) {
+// 	fmt.Println(eb)
+// }
+// func printGreeting(sb spanishBot) {
+// 	fmt.Println(sb)
+// }
+
+// With Interface
+func printGreeting(b bot) {
+	fmt.Println(b.getGreeting())
 }
-func printGreeting(sb spanishBot) {
-	fmt.Println(sb)
-}
+
 func (englishBot) getGreeting() string {
 	//VERY custom logic for generating english greeting
 	return "Hi,There!"
